@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52F742851E9D1E9B00770CDE /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F742841E9D1E9B00770CDE /* ContactTableViewCell.swift */; };
+		525595961E9E051F005D0632 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525595941E9E051F005D0632 /* ContactTableViewCell.swift */; };
+		525595971E9E051F005D0632 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525595951E9E051F005D0632 /* ContactTableViewCell.xib */; };
+		525595991E9E0DCA005D0632 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525595981E9E0DCA005D0632 /* ChatViewController.swift */; };
+		5255959B1E9E1432005D0632 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255959A1E9E1432005D0632 /* Messages.swift */; };
+		52F5CDFE1E9E568000986A28 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5CDFC1E9E568000986A28 /* ChatTableViewCell.swift */; };
+		52F5CDFF1E9E568000986A28 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F5CDFD1E9E568000986A28 /* ChatTableViewCell.xib */; };
 		52F9CFD31E9BBE3100B736FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CFD21E9BBE3100B736FF /* AppDelegate.swift */; };
 		52F9CFD51E9BBE3100B736FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CFD41E9BBE3100B736FF /* ViewController.swift */; };
 		52F9CFD81E9BBE3100B736FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F9CFD61E9BBE3100B736FF /* Main.storyboard */; };
@@ -23,7 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		52F742841E9D1E9B00770CDE /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		525595941E9E051F005D0632 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		525595951E9E051F005D0632 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		525595981E9E0DCA005D0632 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5255959A1E9E1432005D0632 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		52F5CDFC1E9E568000986A28 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		52F5CDFD1E9E568000986A28 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		52F9CFCF1E9BBE3100B736FF /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F9CFD21E9BBE3100B736FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F9CFD41E9BBE3100B736FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,10 +96,15 @@
 				52F9CFD21E9BBE3100B736FF /* AppDelegate.swift */,
 				52F9CFE71E9BC06E00B736FF /* LoginViewController.swift */,
 				52FC17BB1E9CB9FD009FDC56 /* ContactsViewController.swift */,
-				52F742841E9D1E9B00770CDE /* ContactTableViewCell.swift */,
+				525595941E9E051F005D0632 /* ContactTableViewCell.swift */,
+				525595951E9E051F005D0632 /* ContactTableViewCell.xib */,
 				52FC17BD1E9CBD24009FDC56 /* Users.swift */,
+				5255959A1E9E1432005D0632 /* Messages.swift */,
 				52F9CFD41E9BBE3100B736FF /* ViewController.swift */,
 				52F9CFD61E9BBE3100B736FF /* Main.storyboard */,
+				525595981E9E0DCA005D0632 /* ChatViewController.swift */,
+				52F5CDFC1E9E568000986A28 /* ChatTableViewCell.swift */,
+				52F5CDFD1E9E568000986A28 /* ChatTableViewCell.xib */,
 				52F9CFE91E9BCEE200B736FF /* RegisterViewController.swift */,
 				52F9CFDC1E9BBE3100B736FF /* Assets.xcassets */,
 				52F9CFDE1E9BBE3100B736FF /* LaunchScreen.storyboard */,
@@ -173,8 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F9CFE01E9BBE3100B736FF /* LaunchScreen.storyboard in Resources */,
+				52F5CDFF1E9E568000986A28 /* ChatTableViewCell.xib in Resources */,
 				52F9CFEC1E9BD20100B736FF /* GoogleService-Info.plist in Resources */,
 				52F9CFDD1E9BBE3100B736FF /* Assets.xcassets in Resources */,
+				525595971E9E051F005D0632 /* ContactTableViewCell.xib in Resources */,
 				52F9CFD81E9BBE3100B736FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,9 +255,12 @@
 				52F9CFEA1E9BCEE200B736FF /* RegisterViewController.swift in Sources */,
 				52F9CFD51E9BBE3100B736FF /* ViewController.swift in Sources */,
 				52F9CFD31E9BBE3100B736FF /* AppDelegate.swift in Sources */,
-				52F742851E9D1E9B00770CDE /* ContactTableViewCell.swift in Sources */,
+				525595961E9E051F005D0632 /* ContactTableViewCell.swift in Sources */,
+				52F5CDFE1E9E568000986A28 /* ChatTableViewCell.swift in Sources */,
 				52F9CFDB1E9BBE3100B736FF /* FirebaseChat.xcdatamodeld in Sources */,
 				52FC17BC1E9CB9FD009FDC56 /* ContactsViewController.swift in Sources */,
+				5255959B1E9E1432005D0632 /* Messages.swift in Sources */,
+				525595991E9E0DCA005D0632 /* ChatViewController.swift in Sources */,
 				52FC17BE1E9CBD24009FDC56 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

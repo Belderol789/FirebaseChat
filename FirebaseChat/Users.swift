@@ -12,15 +12,26 @@ import UIKit
 class Users {
     var name: String?
     var email: String?
+    var profilePicture: String?
+    var messages: Array<Messages>?
+    var id: String
+  
     
     init() {
         name = ""
         email = ""
+        profilePicture = ""
+        messages = []
+        id = ""
+  
     }
     
-    init(userName :String, userEmail: String) {
+    init(userName :String, userEmail: String, userPicture: String, uid: String) {
         self.name = userName
         self.email = userEmail
+        self.profilePicture = userPicture
+        self.id = uid
+        //self.messages = messages
     }
 
 }

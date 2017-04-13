@@ -26,8 +26,7 @@ class ContactsViewController: UIViewController
         
     
     var users : [Users] = []
-    var emails = [String]()
-    var profilePics = [String]()
+
 
     @IBAction func buttonCancelTapped(_ sender: Any)
         
@@ -56,13 +55,14 @@ class ContactsViewController: UIViewController
         ref.child("users").observe(.childAdded, with: { (snapshot) in
             print("Added:", snapshot)
             guard let info = snapshot.value as? NSDictionary else { return }
+            let user = Users()
             let userName = info["name"] as? String
             let userEmail = info["email"] as? String
             let userPictures = info["profileImageUrl"] as? String
-            let uid = snapshot.key
+            user.id = snapshot.key
             
             
-            self.addToArray(name: userName!, email: userEmail!, profilePicture: userPictures!, uid: uid)
+            self.addToArray(name: userName!, email: userEmail!, profilePicture: userPictures!, uid: user.id)
  
             self.tableView.reloadData()
             
@@ -126,6 +126,8 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate
         self.present(chatViewController, animated: true, completion: nil)
         
     }
+    
+    
     
 
     

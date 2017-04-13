@@ -11,6 +11,7 @@
 		525595971E9E051F005D0632 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525595951E9E051F005D0632 /* ContactTableViewCell.xib */; };
 		525595991E9E0DCA005D0632 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525595981E9E0DCA005D0632 /* ChatViewController.swift */; };
 		5255959B1E9E1432005D0632 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255959A1E9E1432005D0632 /* Messages.swift */; };
+		52F4CED81E9FC2BA00469ACB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4CED71E9FC2BA00469ACB /* Message.swift */; };
 		52F5CDFE1E9E568000986A28 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5CDFC1E9E568000986A28 /* ChatTableViewCell.swift */; };
 		52F5CDFF1E9E568000986A28 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F5CDFD1E9E568000986A28 /* ChatTableViewCell.xib */; };
 		52F9CFD31E9BBE3100B736FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9CFD21E9BBE3100B736FF /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		525595951E9E051F005D0632 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		525595981E9E0DCA005D0632 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		5255959A1E9E1432005D0632 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		52F4CED71E9FC2BA00469ACB /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		52F5CDFC1E9E568000986A28 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		52F5CDFD1E9E568000986A28 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		52F9CFCF1E9BBE3100B736FF /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				52FC17BD1E9CBD24009FDC56 /* Users.swift */,
 				5255959A1E9E1432005D0632 /* Messages.swift */,
 				52F9CFD41E9BBE3100B736FF /* ViewController.swift */,
+				52F4CED71E9FC2BA00469ACB /* Message.swift */,
 				52F9CFD61E9BBE3100B736FF /* Main.storyboard */,
 				525595981E9E0DCA005D0632 /* ChatViewController.swift */,
 				52F5CDFC1E9E568000986A28 /* ChatTableViewCell.swift */,
@@ -159,7 +162,7 @@
 				TargetAttributes = {
 					52F9CFCE1E9BBE3100B736FF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XUN95V9WDZ;
+						DevelopmentTeam = ZQ547JDPVM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +263,7 @@
 				52F9CFDB1E9BBE3100B736FF /* FirebaseChat.xcdatamodeld in Sources */,
 				52FC17BC1E9CB9FD009FDC56 /* ContactsViewController.swift in Sources */,
 				5255959B1E9E1432005D0632 /* Messages.swift in Sources */,
+				52F4CED81E9FC2BA00469ACB /* Message.swift in Sources */,
 				525595991E9E0DCA005D0632 /* ChatViewController.swift in Sources */,
 				52FC17BE1E9CBD24009FDC56 /* Users.swift in Sources */,
 			);
@@ -385,10 +389,11 @@
 			baseConfigurationReference = 976EF71571D8C18DB78B97D3 /* Pods-FirebaseChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XUN95V9WDZ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZQ547JDPVM;
 				INFOPLIST_FILE = FirebaseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Burst.FirebaseChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Burst.FirebaseChatBelderol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -399,10 +404,11 @@
 			baseConfigurationReference = BC991A193339C136357AE6AE /* Pods-FirebaseChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XUN95V9WDZ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZQ547JDPVM;
 				INFOPLIST_FILE = FirebaseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Burst.FirebaseChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Burst.FirebaseChatBelderol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

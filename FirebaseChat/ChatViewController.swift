@@ -18,7 +18,8 @@ class ChatViewController: UIViewController
     @IBOutlet weak var buttonSend: UIButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
     var ref: FIRDatabaseReference!
-    var messages : [Messages] = []
+   // var messages : [Messages] = []
+    var message : Messages?
     var user: Users?
         {
         didSet
@@ -36,10 +37,6 @@ class ChatViewController: UIViewController
             
             tableView.register(ChatTableViewCell.cellNib, forCellReuseIdentifier: ChatTableViewCell.cellIdentifier)
             
-            FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
-                self.user?.id = snapshot.key
-            })
-            
         }
     }
     
@@ -56,32 +53,33 @@ class ChatViewController: UIViewController
     
     @IBAction func buttonSend(_ sender: Any)
     {
+        handleSend()
+
+        
+    }
+    
+    func handleSend() {
         let ref = FIRDatabase.database().reference().child("messages")
         let childRef = ref.childByAutoId()
         let toId = user?.id
         let fromID = FIRAuth.auth()?.currentUser?.uid
         let values = ["text": textFieldChat.text!, "uid": toId!, "fromID": fromID!, "time": dateFormatter.string(from: Date())] as [String : Any]
         childRef.updateChildValues(values)
-        
-        self.addToArray(text: textFieldChat.text!, toUser: toId!, fromUser: fromID!, date: dateFormatter.string(from: Date()))
-        
-        textFieldChat.text = ""
-        
-        
-        
-    }
-    
-    
-    func addToArray(text: String, toUser: String, fromUser: String, date: String) {
-        let text = text
-        let toUser = toUser
-        let fromUser = fromUser
-        let date = date
-        
-        let newMessage = Messages(text: text, toUser: toUser, fromUser: fromUser, date: date)
-        self.messages.append(newMessage)
 
     }
+    
+
+    
+//    func addToArray(text: String, toUser: String, fromUser: String, date: String) {
+//        let text = text
+//        let toUser = toUser
+//        let fromUser = fromUser
+//        let date = date
+//        
+//        let newMessage = Messages(text: text, toUser: toUser, fromUser: fromUser, date: date)
+//        self.messages.append(newMessage)
+//
+//    }
 
     
     

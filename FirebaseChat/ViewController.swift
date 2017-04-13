@@ -12,6 +12,7 @@ import Firebase
 class ViewController: UIViewController
 {
     
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad()
     {
@@ -19,6 +20,8 @@ class ViewController: UIViewController
         super.viewDidLoad()
   
     checkIfUserIsLoggedIn()
+        
+    observeMessages()
         
     }
 
@@ -42,6 +45,23 @@ class ViewController: UIViewController
             })
         }
 
+    }
+    
+    func observeMessages()
+    {
+        let ref = FIRDatabase.database().reference().child("messages")
+        ref.observe(.childAdded, with: { (snapshot) in
+            
+            
+            if let dictionary = snapshot.value as? [String: Any] {
+                let message = Message()
+                message.setValuesForKeys(dictionary)
+                print(message.text!)
+
+            }
+            
+            print(snapshot)
+        }, withCancel: nil)
     }
     
     @IBAction func buttonLogoutTapped(_ sender: Any)

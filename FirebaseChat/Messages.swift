@@ -15,20 +15,23 @@ class Messages
     var toUser : String
     var fromUser : String
     var date : String
+    var name: String
     
     init() {
         text = ""
         toUser = ""
         fromUser = ""
         date = ""
+        name = ""
         
     }
     
-    init(text :String, toUser: String, fromUser: String, date: String) {
+    init(text :String, toUser: String, fromUser: String, date: String, name: String) {
         self.text = text
         self.toUser = toUser
         self.fromUser = fromUser
         self.date = date
+        self.name = name
        
     }
 

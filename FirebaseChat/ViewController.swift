@@ -13,15 +13,18 @@ class ViewController: UIViewController
 {
     
     @IBOutlet weak var tableView: UITableView!
+    var users : [Messages] = []
 
     override func viewDidLoad()
     {
       
         super.viewDidLoad()
-  
-    checkIfUserIsLoggedIn()
         
-    observeMessages()
+    checkIfUserIsLoggedIn()
+    setupUI()
+    fetchUser()
+        
+  
         
     }
 
@@ -47,22 +50,6 @@ class ViewController: UIViewController
 
     }
     
-    func observeMessages()
-    {
-        let ref = FIRDatabase.database().reference().child("messages")
-        ref.observe(.childAdded, with: { (snapshot) in
-            
-            
-            if let dictionary = snapshot.value as? [String: Any] {
-                let message = Message()
-                message.setValuesForKeys(dictionary)
-                print(message.text!)
-
-            }
-            
-            print(snapshot)
-        }, withCancel: nil)
-    }
     
     @IBAction func buttonLogoutTapped(_ sender: Any)
     {
@@ -79,6 +66,11 @@ class ViewController: UIViewController
     
 
       
+    }
+    
+    func setupUI() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     
@@ -98,7 +90,61 @@ class ViewController: UIViewController
 
     }
     
+    func fetchUser()
+    {
+        let ref = FIRDatabase.database().reference()
+        ref.child("messages").observe(.childAdded, with: { (snapshot) in
+            print("Added:", snapshot)
+            guard let info = snapshot.value as? NSDictionary else { return }
+            let text = info["text"] as? String
+            let name = info["name"] as? String
+        
+            
+            self.addToArray(text: text!, name: name!)
+            
+            self.tableView.reloadData()
+            
+        }, withCancel: nil)
+    }
+    
+    func addToArray(text: String, name: String) {
+ 
+        let text = text
+        let name = name
+
+        
+        let newUser = Messages(text: text, toUser: "", fromUser: "", date: "", name: name)
+        self.users.append(newUser)
+        
+    }
+    
+}
+
+    
    
+    
+
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let currentUser = users[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
+        
+        cell.textLabel?.text = currentUser.text
+        cell.detailTextLabel?.text = currentUser.name
+       
+        
+    
+        return cell
+    }
+    
     
 }
 

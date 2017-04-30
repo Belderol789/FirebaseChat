@@ -14,7 +14,15 @@ class Message: NSObject {
     var text: String?
     var date: String?
     var toId: String?
-    var fromId: String?
+    var fromPerson: String?
+    
+    
+    override init() {
+        text = ""
+        date = ""
+        toId = ""
+        fromPerson = ""
+    }
     
 
 }

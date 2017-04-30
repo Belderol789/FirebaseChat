@@ -60,6 +60,7 @@ class ContactsViewController: UIViewController
             let userEmail = info["email"] as? String
             let userPictures = info["profileImageUrl"] as? String
             user.id = snapshot.key
+            print(user.id)
             
             
             self.addToArray(name: userName!, email: userEmail!, profilePicture: userPictures!, uid: user.id)

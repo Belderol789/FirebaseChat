@@ -59,6 +59,8 @@ class RegisterViewController: UIViewController
             let storageRef = FIRStorage.storage().reference().child("\(imageName).jpeg")
             let image = self.imageView.image
             guard let imageData = UIImageJPEGRepresentation(image!, 0.5) else { return }
+            
+            
             let metaData = FIRStorageMetadata()
             metaData.contentType = "image/jpeg"
              storageRef.put(imageData, metadata: metaData, completion: { (metadata, error) in

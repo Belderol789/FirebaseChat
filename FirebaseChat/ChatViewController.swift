@@ -18,7 +18,7 @@ class ChatViewController: UIViewController
     @IBOutlet weak var buttonSend: UIButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
     var ref: FIRDatabaseReference!
-   // var messages : [Messages] = []
+    var messages : [Messages] = []
     var message : Messages?
     var user: Users?
         {
@@ -63,23 +63,28 @@ class ChatViewController: UIViewController
         let childRef = ref.childByAutoId()
         let toId = user?.id
         let fromID = FIRAuth.auth()?.currentUser?.uid
-        let values = ["text": textFieldChat.text!, "uid": toId!, "fromID": fromID!, "time": dateFormatter.string(from: Date())] as [String : Any]
+        let name = user?.name
+        let values = ["text": textFieldChat.text!, "uid": toId!, "fromID": fromID!, "name": name!,"time": dateFormatter.string(from: Date())] as [String : Any]
         childRef.updateChildValues(values)
+        textFieldChat.text = ""
+        
+        tableView.reloadData()
 
     }
     
 
     
-//    func addToArray(text: String, toUser: String, fromUser: String, date: String) {
-//        let text = text
-//        let toUser = toUser
-//        let fromUser = fromUser
-//        let date = date
-//        
-//        let newMessage = Messages(text: text, toUser: toUser, fromUser: fromUser, date: date)
-//        self.messages.append(newMessage)
-//
-//    }
+    func addToArray(text: String, toUser: String, fromUser: String, date: String) {
+        let text = text
+        let toUser = toUser
+        let fromUser = fromUser
+        let date = date
+      
+        
+        let newMessage = Messages(text: text, toUser: toUser, fromUser: fromUser, date: date, name: "")
+        self.messages.append(newMessage)
+
+    }
 
     
     
@@ -112,18 +117,20 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 1
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as? ChatTableViewCell
         
+        let currentMessage = messages[indexPath.row]
+        
      
-//        cell?.labelBody.text = user?.name
-//        cell?.labelDate.text = "today"
-//        cell?.labelFrom.text = "hello"
-//        cell?.labelTo.text = "yeah"
+        cell?.labelBody.text = currentMessage.text
+        cell?.labelDate.text = currentMessage.date
+        cell?.labelFrom.text = currentMessage.fromUser
+        cell?.labelTo.text = user?.name
         
         
         return cell!
